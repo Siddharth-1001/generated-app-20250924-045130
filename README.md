@@ -1,6 +1,6 @@
 # ZenithFeed: Minimalist Reddit Automation
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Siddharth-1001/generated-app-20250924-045130)
 
 ZenithFeed is a visually stunning and minimalist web application designed for content creators, marketers, and researchers to effortlessly monitor Reddit. Users can create custom 'monitors' by specifying subreddits and keywords. The platform then automatically fetches and displays relevant posts from the last 7 days in a clean, elegant, and highly readable card-based interface.
 
@@ -92,7 +92,7 @@ This project is designed for seamless deployment to the Cloudflare network.
 
 Alternatively, you can deploy this project with a single click.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Siddharth-1001/generated-app-20250924-045130)
 
 ## License
 
