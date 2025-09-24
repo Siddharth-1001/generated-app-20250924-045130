@@ -41,22 +41,22 @@ export function MonitorList({ onEdit }: MonitorListProps) {
           key={monitor.id}
           onClick={() => selectMonitor(monitor.id)}
           className={cn(
-            'group flex items-center justify-between rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted cursor-pointer',
-            selectedMonitorId === monitor.id && 'bg-blue-500/10 text-blue-600 dark:text-blue-400'
+            'group flex items-center justify-between rounded-lg px-3 py-2 text-muted-foreground transition-all duration-200 hover:text-primary hover:bg-primary/5 cursor-pointer border border-transparent hover:border-primary/10',
+            selectedMonitorId === monitor.id && 'bg-gradient-to-r from-primary/10 to-primary/5 text-primary border-primary/20 shadow-sm'
           )}
         >
           <div className="flex items-center gap-3 overflow-hidden">
-            <Rss className="h-4 w-4 flex-shrink-0" />
+            <Rss className={cn("h-4 w-4 flex-shrink-0 transition-colors duration-200", selectedMonitorId === monitor.id ? "text-primary" : "text-muted-foreground")} />
             <div className="flex flex-col items-start overflow-hidden">
               <span className="font-medium truncate">r/{monitor.subreddit}</span>
               {monitor.keywords && (
-                <span className="text-xs text-muted-foreground truncate w-full">
+                <span className="text-xs text-muted-foreground/80 truncate w-full">
                   {monitor.keywords}
                 </span>
               )}
             </div>
           </div>
-          <div className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <Button
               variant="ghost"
               size="icon"
@@ -64,7 +64,7 @@ export function MonitorList({ onEdit }: MonitorListProps) {
                 e.stopPropagation();
                 onEdit(monitor);
               }}
-              className="h-7 w-7 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10"
+              className="h-7 w-7 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-200"
             >
               <Pencil className="h-4 w-4" />
               <span className="sr-only">Edit monitor</span>
@@ -73,7 +73,7 @@ export function MonitorList({ onEdit }: MonitorListProps) {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-7 w-7 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                className="h-7 w-7 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors duration-200"
               >
                 <Trash2 className="h-4 w-4" />
                 <span className="sr-only">Delete monitor</span>

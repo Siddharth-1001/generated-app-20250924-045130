@@ -64,7 +64,9 @@ export function CreateMonitorDialog({ monitorToEdit, isOpen, onOpenChange, child
       {children}
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>{isEditMode ? 'Edit Monitor' : 'Create a new monitor'}</DialogTitle>
+          <DialogTitle className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            {isEditMode ? 'Edit Monitor' : 'Create a new monitor'}
+          </DialogTitle>
           <DialogDescription>
             {isEditMode
               ? `Update the details for r/${monitorToEdit.subreddit}.`
@@ -82,7 +84,7 @@ export function CreateMonitorDialog({ monitorToEdit, isOpen, onOpenChange, child
                   <FormControl>
                     <div className="relative">
                       <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-muted-foreground">r/</span>
-                      <Input placeholder="reactjs" {...field} className="pl-7" />
+                      <Input placeholder="reactjs" {...field} className="pl-7 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" />
                     </div>
                   </FormControl>
                   <FormMessage />
@@ -96,7 +98,7 @@ export function CreateMonitorDialog({ monitorToEdit, isOpen, onOpenChange, child
                 <FormItem>
                   <FormLabel>Keywords (optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="e.g., state management, hooks" {...field} />
+                    <Input placeholder="e.g., state management, hooks" {...field} className="focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -106,7 +108,7 @@ export function CreateMonitorDialog({ monitorToEdit, isOpen, onOpenChange, child
               <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>
                 Cancel
               </Button>
-              <Button type="submit" disabled={form.formState.isSubmitting}>
+              <Button type="submit" disabled={form.formState.isSubmitting} className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-200">
                 {form.formState.isSubmitting
                   ? isEditMode ? 'Saving...' : 'Creating...'
                   : isEditMode ? 'Save Changes' : 'Create Monitor'}

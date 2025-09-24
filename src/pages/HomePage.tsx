@@ -80,14 +80,14 @@ export function HomePage() {
   const keywords = selectedMonitor?.keywords;
   return (
     <TooltipProvider>
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-sans">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30 text-foreground font-sans">
         <ThemeToggle className="fixed top-4 right-4 z-50" />
         <div className="grid min-h-screen w-full md:grid-cols-[280px_1fr]">
-          <aside className="hidden border-r bg-slate-100/40 dark:bg-slate-900/40 md:block">
+          <aside className="hidden border-r bg-card/50 backdrop-blur-sm md:block">
             <SidebarContent onEditMonitor={handleEditMonitor} />
           </aside>
           <main className="flex flex-1 flex-col">
-            <header className="flex h-14 items-center gap-4 border-b bg-slate-100/40 dark:bg-slate-900/40 px-4 lg:h-[60px] lg:px-6 sticky top-0 z-30">
+            <header className="flex h-14 items-center gap-4 border-b bg-card/80 backdrop-blur-md px-4 lg:h-[60px] lg:px-6 sticky top-0 z-30 shadow-sm">
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="icon" className="shrink-0 md:hidden">
@@ -100,7 +100,7 @@ export function HomePage() {
                 </SheetContent>
               </Sheet>
               <div className="flex-1">
-                <h1 className="text-xl font-semibold tracking-tight truncate">{title}</h1>
+                <h1 className="text-xl font-bold tracking-tight truncate bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">{title}</h1>
                 {keywords && <p className="text-sm text-muted-foreground truncate">Keywords: {keywords}</p>}
               </div>
               <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export function HomePage() {
                     <p>Refresh Feed</p>
                   </TooltipContent>
                 </Tooltip>
-                <Button onClick={handleOpenCreateDialog}>
+                <Button onClick={handleOpenCreateDialog} className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-200">
                   <PlusCircle className="mr-2 h-4 w-4" />
                   Create Monitor
                 </Button>
